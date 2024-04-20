@@ -1,6 +1,7 @@
+let myLeads = ['good lead', 'perfect job', 'juice cleanse'];
 const inputBtn = document.getElementById('input-btn');
 const inputEl = document.getElementById('input-el');
-let myLeads = ['good lead', 'perfect job', 'juice cleanse'];
+const listEl = document.getElementById('list-el');
 
 inputBtn.addEventListener('click', () => {
   if (inputEl.value !== '') {
@@ -8,7 +9,7 @@ inputBtn.addEventListener('click', () => {
     inputEl.value = '';
 
     for (let i = 0; i < myLeads.length; i++) {
-      console.log(myLeads[i]);
+      listEl.innerHTML += `<li>${myLeads[i]}</li>`;
     }
   }
 });
