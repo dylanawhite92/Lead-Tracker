@@ -7,9 +7,19 @@ inputBtn.addEventListener('click', () => {
   if (inputEl.value !== '') {
     myLeads.push(inputEl.value);
     inputEl.value = '';
-
-    for (let i = 0; i < myLeads.length; i++) {
-      listEl.innerHTML += `<li>${myLeads[i]}</li>`;
-    }
+    renderLeads();
   }
 });
+
+function renderLeads() {
+  let listItems = '';
+
+  for (let i = 0; i < myLeads.length; i++) {
+    listItems += `<a
+    href='${myLeads[i]}'
+    target='_blank'
+    rel='noopener noreferrer'><li>${myLeads[i]}</a></li>`;
+  }
+
+  listEl.innerHTML = listItems;
+}
