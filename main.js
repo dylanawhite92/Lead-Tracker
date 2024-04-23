@@ -15,10 +15,11 @@ function renderLeads() {
   let listItems = '';
 
   for (let i = 0; i < myLeads.length; i++) {
-    listItems += `<a
-    href='${myLeads[i]}'
-    target='_blank'
-    rel='noopener noreferrer'><li>${myLeads[i]}</a></li>`;
+    listItems += `
+    <li>
+      <a href='${myLeads[i]}' target='_blank'>${myLeads[i]}
+      </a>
+    </li>`;
   }
 
   listEl.innerHTML = listItems;

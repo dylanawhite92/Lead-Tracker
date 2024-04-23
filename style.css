@@ -19,3 +19,20 @@ button {
   padding: 10px 20px;
   margin-top: 0.5em;
 }
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-top: 0.3em;
+}
+
+a {
+  color: #5f9341;
+}
+
+a:active {
+  color: yellowgreen;
+}
