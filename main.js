@@ -7,7 +7,11 @@ inputBtn.addEventListener('click', () => {
   if (inputEl.value !== '') {
     myLeads.push(inputEl.value);
     inputEl.value = '';
+
+    localStorage.setItem('myLeads', JSON.stringify(myLeads));
+
     renderLeads();
+    console.log(localStorage.getItem('myLeads'));
   }
 });
 
