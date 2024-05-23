@@ -9,6 +9,12 @@ if (leadsFromStorage) {
   renderLeads();
 }
 
+deleteBtn.addEventListener('dblclick', () => {
+  localStorage.clear();
+  myLeads = [];
+  renderLeads();
+});
+
 inputBtn.addEventListener('click', () => {
   if (inputEl.value !== '') {
     myLeads.push(inputEl.value);
