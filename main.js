@@ -13,7 +13,10 @@ if (leadsFromStorage) {
 const tabs = [{ url: 'https://www.linkedin.com' }];
 
 tabBtn.addEventListener('click', () => {
-  console.log(tabs[0].url);
+  myLeads.push(tabs[0].url);
+
+  localStorage.setItem('myLeads', JSON.stringify(myLeads));
+  renderLinkList(myLeads);
 });
 
 deleteBtn.addEventListener('dblclick', () => {
