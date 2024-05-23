@@ -6,13 +6,13 @@ const listEl = document.getElementById('list-el');
 const leadsFromStorage = JSON.parse(localStorage.getItem('myLeads'));
 
 if (leadsFromStorage) {
-  renderList(myLeads);
+  renderLinkList(myLeads);
 }
 
 deleteBtn.addEventListener('dblclick', () => {
   localStorage.clear();
   myLeads = [];
-  renderList(myLeads);
+  renderLinkList(myLeads);
 });
 
 inputBtn.addEventListener('click', () => {
@@ -22,12 +22,12 @@ inputBtn.addEventListener('click', () => {
 
     localStorage.setItem('myLeads', JSON.stringify(myLeads));
 
-    renderList(myLeads);
+    renderLinkList(myLeads);
     console.log(leadsFromStorage);
   }
 });
 
-function renderList(arr) {
+function renderLinkList(arr) {
   let listItems = '';
 
   for (let i = 0; i < myLeads.length; i++) {
