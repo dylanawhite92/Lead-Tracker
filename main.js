@@ -6,13 +6,13 @@ const listEl = document.getElementById('list-el');
 const leadsFromStorage = JSON.parse(localStorage.getItem('myLeads'));
 
 if (leadsFromStorage) {
-  renderLeads();
+  renderList(myLeads);
 }
 
 deleteBtn.addEventListener('dblclick', () => {
   localStorage.clear();
   myLeads = [];
-  renderLeads();
+  renderList(myLeads);
 });
 
 inputBtn.addEventListener('click', () => {
@@ -22,18 +22,18 @@ inputBtn.addEventListener('click', () => {
 
     localStorage.setItem('myLeads', JSON.stringify(myLeads));
 
-    renderLeads();
+    renderList(myLeads);
     console.log(leadsFromStorage);
   }
 });
 
-function renderLeads() {
+function renderList(arr) {
   let listItems = '';
 
   for (let i = 0; i < myLeads.length; i++) {
     listItems += `
     <li>
-      <a href='${myLeads[i]}' target='_blank'>${myLeads[i]}
+      <a href='${arr[i]}' target='_blank'>${arr[i]}
       </a>
     </li>`;
   }
