@@ -1,8 +1,9 @@
 let myLeads = [];
 const inputBtn = document.getElementById('input-btn');
+const deleteBtn = document.getElementById('delete-btn');
 const inputEl = document.getElementById('input-el');
 const listEl = document.getElementById('list-el');
-let leadsFromStorage = JSON.parse(localStorage.getItem('myLeads'));
+const leadsFromStorage = JSON.parse(localStorage.getItem('myLeads'));
 
 if (leadsFromStorage) {
   renderLeads();
