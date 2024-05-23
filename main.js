@@ -1,7 +1,12 @@
-let myLeads = ['good lead', 'perfect job', 'juice cleanse'];
+let myLeads = [];
 const inputBtn = document.getElementById('input-btn');
 const inputEl = document.getElementById('input-el');
 const listEl = document.getElementById('list-el');
+let leadsFromStorage = JSON.parse(localStorage.getItem('myLeads'));
+
+if (leadsFromStorage) {
+  renderLeads();
+}
 
 inputBtn.addEventListener('click', () => {
   if (inputEl.value !== '') {
@@ -11,7 +16,7 @@ inputBtn.addEventListener('click', () => {
     localStorage.setItem('myLeads', JSON.stringify(myLeads));
 
     renderLeads();
-    console.log(localStorage.getItem('myLeads'));
+    console.log(leadsFromStorage);
   }
 });
 
