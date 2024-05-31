@@ -13,6 +13,12 @@ if (leadsFromStorage) {
 const tabs = [{ url: 'https://www.linkedin.com' }];
 
 tabBtn.addEventListener('click', () => {
+  // Get current tab for chrome extension
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    let activeTab = tabs[0];
+    let activeTabId = activeTab.id;
+  });
+
   myLeads.push(tabs[0].url);
 
   localStorage.setItem('myLeads', JSON.stringify(myLeads));
